@@ -1,0 +1,1 @@
+ web: waitress-serve --port=$PORT Petrol_report.wsgi:application
