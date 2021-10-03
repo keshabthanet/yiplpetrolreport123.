@@ -21,10 +21,7 @@ def lists(request):
         types.append(r[i]['petroleum_product'])
         sale.append(r[i]['sale'])
         country.append(r[i]['country'])
-    print(dates)
-    print(types)
-    print(sale)
-    print(country)
+    
     for i in range(len(dates)):
         ins1 = Product.objects.get_or_create(
         name = types[i]
@@ -44,7 +41,7 @@ def lists(request):
         c = Country.objects.get(cname = country[i])
         try:
             ins4 = Sales.objects.get_or_create(sales = int(sale[i]),typess =  a,year = b,countries = c)
-            print(ins4)
+            
         except:
             pass
     #calculating the total sale of each pertoleum product
